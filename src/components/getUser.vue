@@ -52,7 +52,7 @@ export default {
             console.log(this.$route.params.id)
             const user_id = this.$route.params.id
             try {
-                const response = await fetch('http://localhost:3000/user/' + user_id)
+                const response = await fetch('https://liquidity-be.herokuapp.com/user/' + user_id)
                 const data = await response.json()
                 console.log(data)
                 console.log(data.error)
@@ -72,7 +72,7 @@ export default {
             if (user.f_name === '' || user.l_name === '' || user.phone === '' || user.department === '') return
             try {
                 console.log(user.id);
-                const response = await fetch(`http://localhost:3000/user/` + user.id, {
+                const response = await fetch(`https://liquidity-be.herokuapp.com/user/` + user.id, {
                     method: 'PUT',
                     body: JSON.stringify(user),
                     headers: { "Content-type": "application/json; charset=UTF-8" }
@@ -97,7 +97,7 @@ export default {
         },
         async getAllDepartments() {
             try {
-                const response = await fetch('http://localhost:3000/department')
+                const response = await fetch('https://liquidity-be.herokuapp.com/department')
                 const data = await response.json()
                 console.log(data.error)
                 if (data.error) this.error = data.error;

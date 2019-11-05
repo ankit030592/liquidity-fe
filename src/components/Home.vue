@@ -53,7 +53,7 @@ export default {
     methods: {
         async getAllUsers() {
             try {
-                const response = await fetch('http://localhost:3000/user')
+                const response = await fetch('https://liquidity-be.herokuapp.com/user')
                 const data = await response.json()
                 console.log(data.error)
                 if (data.error) this.error = data.error;
@@ -76,7 +76,7 @@ export default {
             if (confirm("Do you really want to delete?")) {
                 try {
                     console.log(user_id);
-                    const response = await fetch(`http://localhost:3000/user/` + user_id, {
+                    const response = await fetch(`https://liquidity-be.herokuapp.com/user/` + user_id, {
                         method: 'DELETE',
                         headers: { "Content-type": "application/json; charset=UTF-8" }
                     })

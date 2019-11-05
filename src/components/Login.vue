@@ -62,7 +62,7 @@ export default {
             // console.log(this.user)
             try {
                 console.log(user);
-                const response = await fetch('http://localhost:3000/auth', {
+                const response = await fetch('https://liquidity-be.herokuapp.com/auth', {
                     method: 'POST',
                     body: JSON.stringify(user),
                     headers: { "Content-type": "application/json; charset=UTF-8" }

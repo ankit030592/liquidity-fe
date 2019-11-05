@@ -113,7 +113,7 @@
             // console.log(this.user)
             try {
                 console.log(user);
-                const response = await fetch('http://localhost:3000/user', {
+                const response = await fetch('https://liquidity-be.herokuapp.com/user', {
                     method: 'POST',
                     body: JSON.stringify(user),
                     headers: { "Content-type": "application/json; charset=UTF-8" }
@@ -144,7 +144,7 @@
         },
         async getAllDepartments() {
             try {
-                const response = await fetch('http://localhost:3000/department')
+                const response = await fetch('https://liquidity-be.herokuapp.com/department')
                 const data = await response.json()
                 console.log(data.error)
                 if (data.error) this.error = data.error;
